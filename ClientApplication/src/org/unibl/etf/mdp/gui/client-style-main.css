@@ -1,0 +1,92 @@
+* {
+	-fx-primary: #2A2E37;
+	-fx-secondary: #007ACC;
+	-fx-primarytext: #B2B2B2;
+	-fx-blue: #1979D2;
+	-fx-red: #FF0000;
+	-fx-color-1: #1976D2;
+}
+
+.border-pane {
+	-fx-background-color: #384961;
+}
+
+.password-field {
+	-fx-background-color: #384961;
+	-fx-border-radius: 20 20 20 20;
+}
+
+.text-field {
+	-fx-background-color: #4b6180;
+	-fx-border-radius: 20px;
+	-fx-background-radius:20px;
+	-fx-font-size: 18.0;
+	-fx-font-family: Arial;
+	-fx-text-fill: white;
+}
+
+.list-view {
+	-fx-selection-bar: -fx-secondary ;
+    -fx-selection-bar-non-focused: #384961 ;
+	-fx-background-color: #384961;
+}
+
+.list-cell { 
+	-fx-cell-size:50.0px;
+	-fx-font-size: 12.0;
+	-fx-font-family: Montserrat;
+	-fx-text-fill: white;
+	-fx-background-color: transparent;
+	-fx-border-color:white;
+	-fx-text-orientation:center;
+	-fx-border-style: hidden solid solid hidden;
+	-fx-border-width: 1.0;
+	
+}
+.list-cell:filled:selected {
+	-fx-background-color: DEEPSKYBLUE;
+}
+
+.list-cell:filled:selected:focused {
+	-fx-background-color: DEEPSKYBLUE;
+}
+.vbox {
+	-fx-background-color: #35465C;
+}
+
+.tab-pane {
+  -fx-tab-min-width:60.0px;
+  -fx-tab-max-width:60.0px;
+  -fx-tab-min-height:60.0px;
+  -fx-tab-max-height:60.0px;
+}
+
+.tab-pane *.tab-header-area *.tab-header-background {
+  -fx-background-color: #2A2E37;
+}
+
+.tab {
+  -fx-font-family: Arial;
+  -fx-font-size: 18.0;
+  -fx-background-color:#2A2E37;
+}
+
+.tab:selected {
+    -fx-background-color:#384961;
+}
+
+.button {
+	-fx-text-fill: -fx-primarytext;
+	-fx-background-color: -fx-primary;
+	-fx-border-color: -fx-secondary;
+	-fx-border-radius: 20.0px;
+	-fx-background-radius: 20.0px;
+	-fx-font-size: 12.0pt;
+}
+
+
+.button:hover {
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: -fx-secondary;
+	-fx-text-fill: -fx-primary;
+}

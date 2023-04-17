@@ -1,0 +1,69 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ClientAppServiceService WSDL service -->
+
+  <service name="ClientAppService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.mdp.etf.unibl.org"/>
+      <parameter name="wsdlServiceElement" value="ClientAppServiceService"/>
+      <parameter name="schemaQualified" value="http://service.mdp.etf.unibl.org,http://model.mdp.etf.unibl.org"/>
+      <parameter name="wsdlServicePort" value="ClientAppService"/>
+      <parameter name="className" value="org.unibl.etf.mdp.service.ClientAppServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ClientAppService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getNextPerson" qname="operNS:getNextPerson" xmlns:operNS="http://service.mdp.etf.unibl.org" returnQName="retNS:getNextPersonReturn" xmlns:retNS="http://service.mdp.etf.unibl.org" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:client" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:Client" xmlns:tns="http://model.mdp.etf.unibl.org"/>
+      </operation>
+      <operation name="activateTerminal" qname="operNS:activateTerminal" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:terminalId" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getNextDocument" qname="operNS:getNextDocument" xmlns:operNS="http://service.mdp.etf.unibl.org" returnQName="retNS:getNextDocumentReturn" xmlns:retNS="http://service.mdp.etf.unibl.org" returnType="rtns:Document" xmlns:rtns="http://model.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:client" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:Client" xmlns:tns="http://model.mdp.etf.unibl.org"/>
+      </operation>
+      <operation name="isActive" qname="operNS:isActive" xmlns:operNS="http://service.mdp.etf.unibl.org" returnQName="retNS:isActiveReturn" xmlns:retNS="http://service.mdp.etf.unibl.org" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:client" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:Client" xmlns:tns="http://model.mdp.etf.unibl.org"/>
+      </operation>
+      <operation name="login" qname="operNS:login" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:client" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:Client" xmlns:tns="http://model.mdp.etf.unibl.org"/>
+      </operation>
+      <operation name="logPassengerCustomsControl" qname="operNS:logPassengerCustomsControl" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:personId" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="temporarilyDeactive" qname="operNS:temporarilyDeactive" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:terminalId" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="logPassengerPoliceControl" qname="operNS:logPassengerPoliceControl" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:personId" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="logout" qname="operNS:logout" xmlns:operNS="http://service.mdp.etf.unibl.org" soapAction="" >
+        <parameter qname="pns:client" xmlns:pns="http://service.mdp.etf.unibl.org" type="tns:Client" xmlns:tns="http://model.mdp.etf.unibl.org"/>
+      </operation>
+      <parameter name="allowedMethods" value="activateTerminal temporarilyDeactive logout logPassengerCustomsControl getNextPerson logPassengerPoliceControl getNextDocument isActive login"/>
+
+      <typeMapping
+        xmlns:ns="http://model.mdp.etf.unibl.org"
+        qname="ns:Client"
+        type="java:org.unibl.etf.mdp.model.Client"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.mdp.etf.unibl.org"
+        qname="ns:Document"
+        type="java:org.unibl.etf.mdp.model.Document"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

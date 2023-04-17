@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.mdp.etf.unibl.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.mdp.etf.unibl.org" xmlns:intf="http://service.mdp.etf.unibl.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.mdp.etf.unibl.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addOnWarantLog">
+    <complexType>
+     <sequence>
+      <element name="personID" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addOnWarantLogResponse">
+    <complexType/>
+   </element>
+   <element name="addPassenger">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addPassengerResponse">
+    <complexType/>
+   </element>
+   <element name="getPassengerRecords">
+    <complexType/>
+   </element>
+   <element name="getPassengerRecordsResponse">
+    <complexType>
+     <sequence>
+      <element name="getPassengerRecordsReturn" type="xsd:base64Binary"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPassengerRecordsRequest">
+
+      <wsdl:part element="impl:getPassengerRecords" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOnWarantLogResponse">
+
+      <wsdl:part element="impl:addOnWarantLogResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPassengerResponse">
+
+      <wsdl:part element="impl:addPassengerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPassengerRecordsResponse">
+
+      <wsdl:part element="impl:getPassengerRecordsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addOnWarantLogRequest">
+
+      <wsdl:part element="impl:addOnWarantLog" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPassengerRequest">
+
+      <wsdl:part element="impl:addPassenger" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PassengerCheckRecordsSOAPService">
+
+      <wsdl:operation name="addOnWarantLog">
+
+         <wsdl:input message="impl:addOnWarantLogRequest" name="addOnWarantLogRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addOnWarantLogResponse" name="addOnWarantLogResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addPassenger">
+
+         <wsdl:input message="impl:addPassengerRequest" name="addPassengerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addPassengerResponse" name="addPassengerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPassengerRecords">
+
+         <wsdl:input message="impl:getPassengerRecordsRequest" name="getPassengerRecordsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPassengerRecordsResponse" name="getPassengerRecordsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PassengerCheckRecordsSOAPServiceSoapBinding" type="impl:PassengerCheckRecordsSOAPService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addOnWarantLog">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addOnWarantLogRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addOnWarantLogResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addPassenger">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addPassengerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addPassengerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPassengerRecords">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPassengerRecordsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPassengerRecordsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PassengerCheckRecordsSOAPServiceService">
+
+      <wsdl:port binding="impl:PassengerCheckRecordsSOAPServiceSoapBinding" name="PassengerCheckRecordsSOAPService">
+
+         <wsdlsoap:address location="http://localhost:8080/CentralRegistry/services/PassengerCheckRecordsSOAPService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

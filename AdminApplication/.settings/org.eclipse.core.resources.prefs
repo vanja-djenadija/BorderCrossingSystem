@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/org/unibl/etf/mdp/model/BorderCheckpoint.java=UTF-8
+encoding//src/org/unibl/etf/mdp/model/BorderTerminal.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/BorderTerminalSOAPService.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/BorderTerminalSOAPServiceService.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/BorderTerminalSOAPServiceServiceLocator.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/BorderTerminalSOAPServiceSoapBindingStub.java=UTF-8

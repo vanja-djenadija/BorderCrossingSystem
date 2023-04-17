@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1250" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-09-04T10:41:10.009295200Z</date>
+  <millis>1662288070009</millis>
+  <nanos>295200</nanos>
+  <sequence>0</sequence>
+  <logger>org.unibl.etf.mdp.gui.TestApplication</logger>
+  <level>SEVERE</level>
+  <class>org.unibl.etf.mdp.gui.TestApplication</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>java.lang.Exception</message>
+</record>

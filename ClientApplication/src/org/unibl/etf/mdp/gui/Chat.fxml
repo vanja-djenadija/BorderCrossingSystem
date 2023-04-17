@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="600.0"
+	style="-fx-background-color: #35465C;"
+	stylesheets="@client-style-main.css"
+	xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="org.unibl.etf.mdp.gui.ChatController">
+	<center>
+		<TabPane maxHeight="-Infinity" maxWidth="-Infinity"
+			minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0"
+			prefWidth="600.0" side="LEFT" tabClosingPolicy="UNAVAILABLE"
+			BorderPane.alignment="BOTTOM_LEFT">
+			<tabs>
+				<Tab>
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0"
+							prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<HBox prefHeight="540.0" prefWidth="532.0">
+									<children>
+										<ListView fx:id="usersUnicastLV"
+											onMouseClicked="#onClientSelected" prefHeight="540.0"
+											prefWidth="160.0" style="-fx-background-color: #384961;" />
+										<BorderPane>
+											<center>
+												<AnchorPane minHeight="0.0" minWidth="0.0"
+													prefHeight="497.0" prefWidth="380.0"
+													style="-fx-background-color: white;">
+													<children>
+														<ScrollPane prefHeight="497.0"
+															prefWidth="376.0">
+															<content>
+																<VBox fx:id="unicastMessagesVBox" spacing="10.0">
+																	<padding>
+																		<Insets left="10.0" right="10.0" top="10.0" />
+																	</padding>
+																</VBox>
+															</content>
+														</ScrollPane>
+													</children>
+												</AnchorPane>
+											</center>
+											<bottom>
+												<HBox BorderPane.alignment="CENTER">
+													<children>
+														<TextField fx:id="unicastSendMessageTF"
+															blendMode="SRC_ATOP" prefHeight="42.0" prefWidth="329.0"
+															promptText="Enter message" />
+														<Button blendMode="SRC_ATOP"
+															mnemonicParsing="false" onAction="#unicastSendMessage"
+															prefHeight="18.0" prefWidth="29.0" textAlignment="CENTER">
+															<graphic>
+																<ImageView fx:id="unicastSendImage"
+																	fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+																	preserveRatio="true" />
+															</graphic>
+														</Button>
+													</children>
+												</HBox>
+											</bottom>
+										</BorderPane>
+									</children>
+								</HBox>
+							</children>
+						</AnchorPane>
+					</content>
+					<graphic>
+						<ImageView fx:id="unicastImage" fitHeight="50.0"
+							fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+					</graphic>
+				</Tab>
+				<Tab>
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0"
+							prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<VBox prefHeight="540.0" prefWidth="532.0">
+									<children>
+										<ScrollPane prefHeight="500.0">
+											<content>
+												<VBox fx:id="multicastMessagesVBox" spacing="10.0">
+													<padding>
+														<Insets left="10.0" right="10.0" top="10.0" />
+													</padding>
+												</VBox>
+											</content>
+										</ScrollPane>
+										<HBox>
+											<children>
+												<TextField fx:id="multicastSendMessageTF"
+													blendMode="SRC_ATOP" prefHeight="42.0" prefWidth="482.0"
+													promptText="Enter message" />
+												<Button blendMode="SRC_ATOP" mnemonicParsing="false"
+													onAction="#multicastSendMessage" prefHeight="18.0"
+													prefWidth="29.0" textAlignment="CENTER">
+													<graphic>
+														<ImageView fx:id="multicastSendImage"
+															fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+															preserveRatio="true" />
+													</graphic>
+												</Button>
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+					</content>
+					<graphic>
+						<ImageView fx:id="multicastImage" fitHeight="50.0"
+							fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+					</graphic>
+				</Tab>
+				<Tab>
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0"
+							prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<VBox prefHeight="540.0" prefWidth="532.0">
+									<children>
+										<ScrollPane prefHeight="500.0">
+											<content>
+												<VBox fx:id="broadcastMessagesVBox" spacing="10.0">
+													<padding>
+														<Insets left="10.0" right="10.0" top="10.0" />
+													</padding>
+												</VBox>
+											</content>
+										</ScrollPane>
+										<HBox>
+											<children>
+												<TextField fx:id="broadcastSendMessageTF"
+													blendMode="SRC_ATOP" prefHeight="42.0" prefWidth="482.0"
+													promptText="Enter message" />
+												<Button blendMode="SRC_ATOP" mnemonicParsing="false"
+													onAction="#broadcastSendMessage" prefHeight="18.0"
+													prefWidth="29.0" textAlignment="CENTER">
+													<graphic>
+														<ImageView fx:id="broadcastSendImage"
+															fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+															preserveRatio="true" />
+													</graphic>
+												</Button>
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+								<HBox />
+							</children>
+						</AnchorPane>
+					</content>
+					<graphic>
+						<ImageView fx:id="broadcastImage" fitHeight="50.0"
+							fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+					</graphic>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<top>
+		<HBox prefHeight="50.0" prefWidth="200.0" spacing="10.0"
+			style="-fx-background-color: #282C34;" BorderPane.alignment="CENTER">
+			<children>
+				<Button mnemonicParsing="false" onAction="#downloadLogs"
+					text="Download Logs" textAlignment="CENTER" wrapText="true" />
+				<Button layoutX="558.0" layoutY="10.0"
+					mnemonicParsing="false" onAction="#changePassword"
+					text="Change Password" />
+				<Button layoutX="558.0" layoutY="10.0"
+					mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+				<Button fx:id="continueButton" layoutX="313.0" layoutY="20.0"
+					mnemonicParsing="false" onAction="#continueTerminal"
+					text="Continue" visible="false" />
+			</children>
+			<padding>
+				<Insets bottom="10.0" right="10.0" top="10.0" />
+			</padding>
+		</HBox>
+	</top>
+</BorderPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+	prefWidth="400.0" style="-fx-background-color: #384961;"
+	stylesheets="@client-style-main.css"
+	xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="org.unibl.etf.mdp.gui.BorderController">
+	<children>
+		<TextField fx:id="terminalIDTF" focusTraversable="false"
+			layoutX="87.0" layoutY="140.0" prefHeight="37.0" prefWidth="225.0"
+			promptText="Terminal ID"
+			style="-fx-background-color: #2A2E37; -fx-border-color: #007ACC; -fx-border-radius: 20 20 20 20;"
+			styleClass="text-field" />
+		<TextField fx:id="entryIDTF" focusTraversable="false"
+			layoutX="87.0" layoutY="194.0" prefHeight="38.0" prefWidth="226.0"
+			promptText="Entry ID"
+			style="-fx-background-color: #2A2E37; -fx-border-color: #007ACC; -fx-border-radius: 20 20 20 20;" />
+		<Button fx:id="continueButton" layoutX="224.0" layoutY="253.0"
+			mnemonicParsing="false" onAction="#continueToPoliceControl" text="Continue" />
+		<ImageView fx:id="image" fitHeight="50.0" fitWidth="50.0" layoutX="175.0"
+			layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+		</ImageView>
+	</children>
+</AnchorPane>

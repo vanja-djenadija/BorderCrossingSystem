@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.mdp.etf.unibl.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.mdp.etf.unibl.org" xmlns:intf="http://service.mdp.etf.unibl.org" xmlns:tns1="http://model.mdp.etf.unibl.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.mdp.etf.unibl.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.mdp.etf.unibl.org"/>
+   <element name="getNextPerson">
+    <complexType>
+     <sequence>
+      <element name="client" type="tns1:Client"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNextPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="getNextPersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="activateTerminal">
+    <complexType>
+     <sequence>
+      <element name="terminalId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="activateTerminalResponse">
+    <complexType/>
+   </element>
+   <element name="getNextDocument">
+    <complexType>
+     <sequence>
+      <element name="client" type="tns1:Client"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getNextDocumentResponse">
+    <complexType>
+     <sequence>
+      <element name="getNextDocumentReturn" type="tns1:Document"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isActive">
+    <complexType>
+     <sequence>
+      <element name="client" type="tns1:Client"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isActiveResponse">
+    <complexType>
+     <sequence>
+      <element name="isActiveReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="client" type="tns1:Client"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType/>
+   </element>
+   <element name="logPassengerCustomsControl">
+    <complexType>
+     <sequence>
+      <element name="personId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logPassengerCustomsControlResponse">
+    <complexType/>
+   </element>
+   <element name="temporarilyDeactive">
+    <complexType>
+     <sequence>
+      <element name="terminalId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="temporarilyDeactiveResponse">
+    <complexType/>
+   </element>
+   <element name="logPassengerPoliceControl">
+    <complexType>
+     <sequence>
+      <element name="personId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logPassengerPoliceControlResponse">
+    <complexType/>
+   </element>
+   <element name="logout">
+    <complexType>
+     <sequence>
+      <element name="client" type="tns1:Client"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logoutResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.mdp.etf.unibl.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Client">
+    <sequence>
+     <element name="entryId" nillable="true" type="xsd:string"/>
+     <element name="police" type="xsd:boolean"/>
+     <element name="terminalId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Document">
+    <sequence>
+     <element name="document" nillable="true" type="xsd:base64Binary"/>
+     <element name="passengerId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="logPassengerPoliceControlRequest">
+
+      <wsdl:part element="impl:logPassengerPoliceControl" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutResponse">
+
+      <wsdl:part element="impl:logoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutRequest">
+
+      <wsdl:part element="impl:logout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNextDocumentRequest">
+
+      <wsdl:part element="impl:getNextDocument" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isActiveResponse">
+
+      <wsdl:part element="impl:isActiveResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logPassengerCustomsControlResponse">
+
+      <wsdl:part element="impl:logPassengerCustomsControlResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logPassengerCustomsControlRequest">
+
+      <wsdl:part element="impl:logPassengerCustomsControl" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="activateTerminalResponse">
+
+      <wsdl:part element="impl:activateTerminalResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="activateTerminalRequest">
+
+      <wsdl:part element="impl:activateTerminal" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="temporarilyDeactiveRequest">
+
+      <wsdl:part element="impl:temporarilyDeactive" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNextDocumentResponse">
+
+      <wsdl:part element="impl:getNextDocumentResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="temporarilyDeactiveResponse">
+
+      <wsdl:part element="impl:temporarilyDeactiveResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNextPersonResponse">
+
+      <wsdl:part element="impl:getNextPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNextPersonRequest">
+
+      <wsdl:part element="impl:getNextPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logPassengerPoliceControlResponse">
+
+      <wsdl:part element="impl:logPassengerPoliceControlResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isActiveRequest">
+
+      <wsdl:part element="impl:isActive" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ClientAppService">
+
+      <wsdl:operation name="getNextPerson">
+
+         <wsdl:input message="impl:getNextPersonRequest" name="getNextPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNextPersonResponse" name="getNextPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="activateTerminal">
+
+         <wsdl:input message="impl:activateTerminalRequest" name="activateTerminalRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:activateTerminalResponse" name="activateTerminalResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNextDocument">
+
+         <wsdl:input message="impl:getNextDocumentRequest" name="getNextDocumentRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNextDocumentResponse" name="getNextDocumentResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isActive">
+
+         <wsdl:input message="impl:isActiveRequest" name="isActiveRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isActiveResponse" name="isActiveResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logPassengerCustomsControl">
+
+         <wsdl:input message="impl:logPassengerCustomsControlRequest" name="logPassengerCustomsControlRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logPassengerCustomsControlResponse" name="logPassengerCustomsControlResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="temporarilyDeactive">
+
+         <wsdl:input message="impl:temporarilyDeactiveRequest" name="temporarilyDeactiveRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:temporarilyDeactiveResponse" name="temporarilyDeactiveResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logPassengerPoliceControl">
+
+         <wsdl:input message="impl:logPassengerPoliceControlRequest" name="logPassengerPoliceControlRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logPassengerPoliceControlResponse" name="logPassengerPoliceControlResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdl:input message="impl:logoutRequest" name="logoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logoutResponse" name="logoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ClientAppServiceSoapBinding" type="impl:ClientAppService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getNextPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNextPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNextPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="activateTerminal">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="activateTerminalRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="activateTerminalResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNextDocument">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNextDocumentRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNextDocumentResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isActive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isActiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isActiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logPassengerCustomsControl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logPassengerCustomsControlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logPassengerCustomsControlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="temporarilyDeactive">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="temporarilyDeactiveRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="temporarilyDeactiveResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logPassengerPoliceControl">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logPassengerPoliceControlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logPassengerPoliceControlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ClientAppServiceService">
+
+      <wsdl:port binding="impl:ClientAppServiceSoapBinding" name="ClientAppService">
+
+         <wsdlsoap:address location="http://localhost:8080/TestClientIntermediaryServer/services/ClientAppService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/org/unibl/etf/mdp/model/Client.java=UTF-8
+encoding//src/org/unibl/etf/mdp/model/Document.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/TestAppService.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/TestAppServiceService.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/TestAppServiceServiceLocator.java=UTF-8
+encoding//src/org/unibl/etf/mdp/service/TestAppServiceSoapBindingStub.java=UTF-8
